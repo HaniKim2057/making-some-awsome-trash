@@ -1,0 +1,49 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f9f9fa;
+  margin: 0px 5px;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(59, 59, 59, 0.2);
+}
+.nav__ul {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__link {
+  color: #2e363e;
+  position: relative;
+}
+.nav__notification-chats {
+  background-color: rgb(252, 49, 49);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.nav__notification-find {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(252, 49, 49);
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+}
+
+/* 220122
+  오타에 주의할 것!!
+   class -> clsss
+   nav__notification-chat -> nav_notification-chat
+  으로 되어있어서 position: absolute 적용이 안 됨
+  간단한 것도 copy&paste 하는 습관 들일 필요가 있음 */
