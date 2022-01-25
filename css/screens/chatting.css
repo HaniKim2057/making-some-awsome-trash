@@ -1,6 +1,6 @@
 #chatting-screen {
   background-color: #abc1d1;
-  height: 200vh;
+  height: 150vh;
 }
 #chatting-screen .alt-header,
 #chatting-screen .status-bar {
@@ -17,17 +17,160 @@
   z-index: 1;
 }
 .main-chatting {
-  margin-top: 120px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .chatting__timestamp {
-  font-size: 12px;
-  color: white;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
   background-color: #92a4b2;
   padding: 8px 12px;
-  border-radius: 50% / 10%;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
-/* 220124 timestamp가 양옆이 잘려버리는데 해결방법을 못 찾음.
-   내일 완성하기 전에 해결하자. */
+
+@keyframes fadeIn-leftside {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn-rightside {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.message-row img {
+  width: 45px;
+  height: 45px;
+  border-radius: 18px;
+  margin-right: 15px;
+}
+.message__author {
+  margin-bottom: 6px;
+  display: block;
+}
+.message__info {
+  display: flex;
+  align-items: flex-end;
+  animation: fadeIn-leftside 0.25s linear;
+}
+.message__bubble {
+  background-color: white;
+  padding: 10px 11px;
+  border-radius: 13px;
+  border-top-left-radius: 0px;
+  margin-right: 6px;
+}
+.message__author,
+.message__time {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+  opacity: 0;
+  animation: fadeIn-rightside 0.25s linear forwards;
+  animation-delay: 1s;
+}
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  border-radius: 13px 0px 13px 13px;
+  margin-right: 0px;
+  margin-left: 6px;
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+.reply input {
+  height: 32px;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+.reply__column:first-child i {
+  font-size: 25px;
+  color: var(--grey);
+}
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+}
+.reply__column:last-child > i {
+  font-size: 25px;
+  color: var(--grey);
+  top: 7px;
+  right: 42px;
+}
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-laugh,
+.reply button {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-laugh,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 94vw;
+  transform: translateX(-12%);
+}

@@ -1,0 +1,23 @@
+#only-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 520px) {
+  #only-mobile {
+    position: fixed;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--yellow);
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}
