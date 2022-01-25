@@ -1,0 +1,33 @@
+#chatting-screen {
+  background-color: #abc1d1;
+  height: 200vh;
+}
+#chatting-screen .alt-header,
+#chatting-screen .status-bar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #abc1d1;
+  box-sizing: border-box;
+}
+#chatting-screen .status-bar {
+  z-index: 2;
+}
+#chatting-screen .alt-header {
+  z-index: 1;
+}
+.main-chatting {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chatting__timestamp {
+  font-size: 12px;
+  color: white;
+  background-color: #92a4b2;
+  padding: 8px 12px;
+  border-radius: 50% / 10%;
+}
+/* 220124 timestamp가 양옆이 잘려버리는데 해결방법을 못 찾음.
+   내일 완성하기 전에 해결하자. */

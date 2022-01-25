@@ -1,0 +1,14 @@
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-left: 6px;
+}
